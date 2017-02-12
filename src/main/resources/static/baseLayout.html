@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Last Week Tonight</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.2.0/ui-bootstrap-tpls.min.js"></script>
+
+	<script defer src="app.js"></script>
+	<script defer src="header/header.js"></script>
+	<link rel="icon" type="image/jp" href="img/LWT.jpg" />
+	
+	<!-- ROUTE-SPECIFIC SCRIPTS -->
+	<base href="/"> <!-- needed for $locationProvider.html5Mode(true); -->
+	<script defer src="episode/episode.js"></script>
+</head>
+<body data-ng-app="LWT">
+	<div data-ng-controller="MainController as main">
+		<div data-ng-controller="HeaderPanel as header" class="Container">
+			<span class="Container Inline" id="AlertBar">
+				<h1>Last Week Tonight with John Oliver</h1>
+			</span>
+			<br>
+			<div id="navigationBar" >
+				<a href="Recent-Episodes" id="navRecentEpisodes">Recent Episodes</a>
+				<a href="John-Oliver-Call-To-Action-Results" id="navCtaResults">Call To Action Results</a>
+			
+			</div>
+			<br>
+		</div>
+		<hr/>
+		<div data-ng-view id="ngView"></div>
+	</div>
+</body>
+</html>
